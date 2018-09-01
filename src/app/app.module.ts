@@ -11,6 +11,7 @@ import { InMemoryDataService } from './in-memory-data.service';
 import { HttpClientModule } from '@angular/common/http';
 import { HeroSearchComponent } from './hero-search/hero-search.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { MessageService } from './message.service';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
       InMemoryDataService, { dataEncapsulation: false }
     )
   ],
-  providers: [],
+  providers: [MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
