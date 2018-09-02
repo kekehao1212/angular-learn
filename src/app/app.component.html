@@ -6,4 +6,5 @@
   </nav>
   <router-outlet></router-outlet>
   <app-message  [hello]="hello"></app-message>
+  <app-message [message]="{h: 'hello'}" (hello)="sayHello()"></app-message>
 </div>

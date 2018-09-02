@@ -5,6 +5,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  hello: object = {a: 'hello'};
-
+  sayHello(): void {
+    console.log('hello');
+  }
 }
