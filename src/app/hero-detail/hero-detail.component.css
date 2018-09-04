@@ -28,3 +28,7 @@ button:disabled {
   color: #ccc;
   cursor: auto;
 }
+:host {
+  display: block;
+  border: 1px solid black;
+}

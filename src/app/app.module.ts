@@ -12,6 +12,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { HeroSearchComponent } from './hero-search/hero-search.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MessageService } from './message.service';
+import { CountDownParentComponent } from './count-down-parent/count-down-parent.component';
+import { CountdownTimerComponent } from './countdown-timer/countdown-timer.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { MessageService } from './message.service';
     HeroDetailComponent,
     MessageComponent,
     HeroSearchComponent,
-    DashboardComponent
+      DashboardComponent,
+      CountDownParentComponent,
+      CountdownTimerComponent
   ],
   imports: [
     BrowserModule,
