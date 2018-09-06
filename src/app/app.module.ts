@@ -14,6 +14,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { MessageService } from './message.service';
 import { CountDownParentComponent } from './count-down-parent/count-down-parent.component';
 import { CountdownTimerComponent } from './countdown-timer/countdown-timer.component';
+import { HighlightDirective } from './highlight.directive';
 
 @NgModule({
   declarations: [
@@ -22,9 +23,10 @@ import { CountdownTimerComponent } from './countdown-timer/countdown-timer.compo
     HeroDetailComponent,
     MessageComponent,
     HeroSearchComponent,
-      DashboardComponent,
-      CountDownParentComponent,
-      CountdownTimerComponent
+    DashboardComponent,
+    CountDownParentComponent,
+    CountdownTimerComponent,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,
