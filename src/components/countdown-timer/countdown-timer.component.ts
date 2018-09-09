@@ -10,7 +10,7 @@ export class CountdownTimerComponent implements OnInit, OnDestroy, AfterViewInit
   intervalId = 0;
   message = '';
   seconds = 11;
-
+  private condition = false;
   clearTimer() { clearInterval(this.intervalId); }
 
   ngOnInit()    { this.start(); }

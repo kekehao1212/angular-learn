@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output } from '@angular/core';
-import { MessageService } from '../message.service';
+import { MessageService } from '../../services/message.service';
 import { EventEmitter } from '@angular/core';
 
 interface Message {
