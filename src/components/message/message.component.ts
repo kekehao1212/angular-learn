@@ -14,6 +14,8 @@ export class MessageComponent implements OnInit {
   @Input() message: Message;
   @Output() hello: EventEmitter<any> = new EventEmitter();
   click(event): void {
+    console.log(this);
+    console.log(event);
     this.hello.emit(null);
   }
   constructor(public messageService: MessageService) { }

@@ -5,6 +5,9 @@
     <label>name:
       <input [(ngModel)]="hero.name" placeholder="name"/>
     </label>
+    <br>
+    <input (keyup)="0" #testInput required>
+    <p>{{testInput.value}}</p>
   </div>
   <button (click)="save($event)">save</button>
 </div>
