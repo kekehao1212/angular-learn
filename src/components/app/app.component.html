@@ -1,9 +1,9 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div>
   <nav>
-    <a routerLink="/heroes">Heroes</a>
+    <a routerLink="/heroes" routerLinkActive="active">Heroes</a>
     <a routerLink="/dashboard">Dashboard</a>
-    <a routerLink="/countDown">CountDown</a>
+    <a routerLink="/countDown" routerLinkActive="active">CountDown</a>
   </nav>
   <router-outlet></router-outlet>
   <app-message [message]="{h: 'hello'}" (hello)="sayHello()"></app-message>
