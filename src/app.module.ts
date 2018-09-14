@@ -14,6 +14,7 @@ import { HighlightDirective } from './directives/highlight.directive';
 import { UnlessDirective } from './directives/Unless.directive';
 import { PageNotFoundComponent } from './components/PageNotFound/PageNotFound.component';
 import { HeroesModule } from './components/heroes/heroes.module';
+import { CrisisCenterModule } from './components/crisis-center/crisis-center.module';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { HeroesModule } from './components/heroes/heroes.module';
     BrowserModule,
     FormsModule,
     HeroesModule,
+    CrisisCenterModule,
     AppRoutingModule,
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(

@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output } from '@angular/core';
 import { MessageService } from '../../services/message.service';
 import { EventEmitter } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 interface Message {
   h: string;
@@ -19,13 +19,15 @@ export class MessageComponent implements OnInit {
     console.log(this);
     console.log(event);
     this.hello.emit(null);
+    console.log(this.route);
+    this.router.navigate(['./3', { id: 1 }], { relativeTo: this.route });
   }
   constructor(public messageService: MessageService,
-              public router: Router) { }
+              public router: Router,
+              private route: ActivatedRoute) { }
 
   ngOnInit() {
     console.log(this.messageService);
-    console.log(this.message);
+    console.log(this.message, 'sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss');
   }
-
 }

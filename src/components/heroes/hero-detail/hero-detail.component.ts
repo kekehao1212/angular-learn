@@ -3,7 +3,7 @@ import { Hero } from '../types/hero';
 import { ActivatedRoute, Router, ParamMap } from '@angular/router';
 import { HeroService } from '../services/hero.service';
 import { Location } from '@angular/common';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 
 @Component({
@@ -12,23 +12,18 @@ import { switchMap } from 'rxjs/operators';
   styleUrls: ['./hero-detail.component.css']
 })
 export class HeroDetailComponent implements OnInit {
-  @Input() hero: Hero;
-  goBack(): void {
+  hero$: Observable<Hero>;
+  back(): void {
+    // this.router.navigate(['/heroes']);
     this.location.back();
   }
 
   save($event): void {
-    console.log($event);
-    this.heroService.updateHero(this.hero)
-      .subscribe(() => this.goBack());
+    console.log(this.hero$);
+    // this.heroService.updateHero(this.hero$)
+    //   .subscribe(() => this.goBack());
   }
 
-  getHero() {
-    const id = +this.route.snapshot.paramMap.get('id');
-    this.heroService.getHero(id)
-      .subscribe(hero => this.hero = hero);
-
-  }
   constructor(
     private route: ActivatedRoute,
     private heroService: HeroService,
@@ -37,12 +32,12 @@ export class HeroDetailComponent implements OnInit {
   ) { }
     // Activated Route in action
   ngOnInit() {
-    // this.hero$ = this.route.paramMap.pipe(
-    //   switchMap((params: ParamMap) => {
-    //     this.heroService.getHero(params.get('id'));
-    //   })
-    // );
-    this.getHero();
+    //
+    // const id = +this.route.snapshot.paramMap.get('id');
+    // this.hero$ = this.heroService.getHero(id);
+    this.hero$ = this.route.paramMap.pipe(
+      switchMap((params: ParamMap) =>
+        this.heroService.getHero(+params.get('id')))
+    );
   }
-
 }
