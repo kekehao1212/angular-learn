@@ -15,6 +15,7 @@ import { UnlessDirective } from './directives/Unless.directive';
 import { PageNotFoundComponent } from './components/PageNotFound/PageNotFound.component';
 import { HeroesModule } from './components/heroes/heroes.module';
 import { CrisisCenterModule } from './components/crisis-center/crisis-center.module';
+import { PopupComponent } from './components/popup/popup.component';
 
 @NgModule({
   declarations: [
@@ -24,13 +25,14 @@ import { CrisisCenterModule } from './components/crisis-center/crisis-center.mod
     CountdownTimerComponent,
     HighlightDirective,
     UnlessDirective,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    PopupComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HeroesModule,
-    CrisisCenterModule,
+    // CrisisCenterModule,
     AppRoutingModule,
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(

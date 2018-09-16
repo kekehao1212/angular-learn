@@ -17,7 +17,8 @@ export class CrisisDetailResolver implements Resolve<Crisis> {
       take(1),
       map(crisis => {
         if (crisis) {
-          return crisis;
+          const crisis1: Crisis = crisis;
+          return crisis1;
         } else { // id not found
           this.router.navigate(['/crisis-center']);
           return null;

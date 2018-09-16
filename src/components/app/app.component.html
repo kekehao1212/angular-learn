@@ -5,7 +5,9 @@
     <a routerLink="/dashboard">Dashboard</a>
     <a routerLink="/countDown" routerLinkActive="active">CountDown</a>
     <a routerLink="/crisis-center" routerLinkActive="active">crisis-center</a>
+    <a (click)="popup()">popup</a>
   </nav>
   <router-outlet></router-outlet>
+  <router-outlet name="popup"></router-outlet>
   <app-message [message]="{h: 'hello'}" (hello)="sayHello()"></app-message>
 </div>

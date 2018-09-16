@@ -20,10 +20,10 @@ export class MessageComponent implements OnInit {
     console.log(event);
     this.hello.emit(null);
     console.log(this.route);
-    this.router.navigate(['./3', { id: 1 }], { relativeTo: this.route });
+    this.router.navigate(['./aa', { id: 1, foo: 'foohhh' }], { relativeTo: this.route });
   }
   constructor(public messageService: MessageService,
-              public router: Router,
+              private router: Router,
               private route: ActivatedRoute) { }
 
   ngOnInit() {

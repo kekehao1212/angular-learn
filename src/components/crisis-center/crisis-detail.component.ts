@@ -40,6 +40,7 @@ export class CrisisDetailComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    console.log(this.route);
     this.route.data
       .subscribe((data: { crisis: Crisis }) => {
         this.editName = data.crisis.name;
@@ -72,7 +73,7 @@ export class CrisisDetailComponent implements OnInit {
     // so that the CrisisListComponent can select that crisis.
     // Add a totally useless `foo` parameter for kicks.
     // Relative navigation back to the crises
-    this.router.navigate(['../', { id: crisisId, foo: 'foohhh' }], { relativeTo: this.route });
+    this.router.navigate(['./', { id: crisisId, foo: 'foohhh' }], { relativeTo: this.route });
   }
 }
 
