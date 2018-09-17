@@ -16,6 +16,8 @@ import { PageNotFoundComponent } from './components/PageNotFound/PageNotFound.co
 import { HeroesModule } from './components/heroes/heroes.module';
 import { CrisisCenterModule } from './components/crisis-center/crisis-center.module';
 import { PopupComponent } from './components/popup/popup.component';
+import { Route } from '@angular/compiler/src/core';
+import { Router } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -42,4 +44,8 @@ import { PopupComponent } from './components/popup/popup.component';
   providers: [MessageService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(router: Router) {
+    console.log('Routes: ', JSON.stringify(router.config, undefined, 2));
+  }
+}
