@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Host, Optional, Self, SkipSelf } from '@angular/core';
 import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
 import { Hero } from '../types/hero';
 import { Subject, Observable } from 'rxjs';
@@ -7,7 +7,8 @@ import { HeroService } from '../services/hero.service';
 @Component({
   selector: 'app-hero-search',
   templateUrl: './hero-search.component.html',
-  styleUrls: ['./hero-search.component.css']
+  styleUrls: ['./hero-search.component.css'],
+  providers: [HeroService]
 })
 export class HeroSearchComponent implements OnInit {
   heroes$: Observable<Hero[]>;
@@ -16,7 +17,7 @@ export class HeroSearchComponent implements OnInit {
     this.searchTerms.next(term);
   }
 
-  constructor(private heroSerivice: HeroService) { }
+  constructor(@Host() private  heroSerivice: HeroService) { }
 
   ngOnInit() {
     this.heroes$ = this.searchTerms.pipe(

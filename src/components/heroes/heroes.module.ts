@@ -20,6 +20,6 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     HeroSearchComponent,
     DashboardComponent
   ],
-  providers: [HeroService]
+  // providers: [HeroService]
 })
 export class HeroesModule { }
