@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { Hero } from '../types/hero';
 import { Observable, of} from 'rxjs';
 import { catchError, map, tap} from 'rxjs/operators';
-import { MessageService } from '../../../services/message.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { MessageService } from '../../../core/services/message/message.service';
 
 const httpOptions = {
   headers: new HttpHeaders({'Content-Type': 'application/json'})
@@ -36,6 +36,7 @@ export class HeroService {
       catchError(this.handleError<Hero>('addHero'))
     );
   }
+
   deleteHero(hero: Hero | number): Observable<Hero> {
     const id = typeof hero === 'number' ? hero : hero.id;
     const url = `${this.heroesUrl}/${id}`;
@@ -45,6 +46,7 @@ export class HeroService {
       catchError(this.handleError<Hero>('deleteHero'))
     );
   }
+
   updateHero (hero: Hero): Observable<any> {
 
     return this.http.put(this.heroesUrl, hero, httpOptions).pipe(

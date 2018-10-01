@@ -7,8 +7,8 @@ import { CrisisListComponent } from './crisis-list.component';
 import { CrisisCenterHomeComponent } from './crisis-center-home.component';
 import { CrisisDetailComponent } from './crisis-detail.component';
 import { CrisisCenterRoutingModule } from './crisis-center-routing.module';
-import { DialogService } from '../dialog.service';
-import { CanDeactivateGuard } from '../can-deactivate-guard.service';
+import { DialogService } from './dialog.service';
+import { CanDeactivateGuard } from './can-deactivate-guard.service';
 // import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({

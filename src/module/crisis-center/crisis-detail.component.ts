@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 
 // import { slideInDownAnimation } from '../animations';
 import { Crisis } from './crisis.service';
-import { DialogService } from '../dialog.service';
+import { DialogService } from './dialog.service';
 
 @Component({
   template: `

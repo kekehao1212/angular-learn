@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpInterceptor, HttpHandler, HttpRequest, HttpResponse } from '@angular/common/http';
-import { MessageService } from './message.service';
+import { MessageService } from '../message/message.service';
 import { tap, finalize } from 'rxjs/operators';
 
 @Injectable()

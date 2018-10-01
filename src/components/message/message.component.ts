@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output } from '@angular/core';
-import { MessageService } from '../../services/message.service';
 import { EventEmitter } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { MessageService } from '../../core/services/message/message.service';
 
 interface Message {
   h: string;

@@ -7,12 +7,14 @@ import { HeroService } from './services/hero.service';
 import { HeroSearchComponent } from './hero-search/hero-search.component';
 import { HeroRoutingModule } from './heroes.routing';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { SharedModule } from '../../shared/shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
-    HeroRoutingModule
+    HeroRoutingModule,
+    SharedModule
   ],
   declarations: [
     HeroListComponent,
@@ -20,6 +22,6 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     HeroSearchComponent,
     DashboardComponent
   ],
-  // providers: [HeroService]
+  providers: [HeroService]
 })
 export class HeroesModule { }
