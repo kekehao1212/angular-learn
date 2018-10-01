@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { AppComponent } from './components/app/app.component';
 import { MessageComponent } from './components/message/message.component';
@@ -18,6 +18,7 @@ import { CrisisCenterModule } from './components/crisis-center/crisis-center.mod
 import { PopupComponent } from './components/popup/popup.component';
 import { Route } from '@angular/compiler/src/core';
 import { Router } from '@angular/router';
+import { HttpInterceptorsService } from './services/http-interceptors.service';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,9 @@ import { Router } from '@angular/router';
       InMemoryDataService, { dataEncapsulation: false }
     ),
   ],
-  providers: [MessageService],
+  providers: [MessageService, {
+    provide: HTTP_INTERCEPTORS, useClass: HttpInterceptorsService, multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule {
