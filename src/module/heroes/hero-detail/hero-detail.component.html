@@ -9,6 +9,7 @@
     <input (keyup)="0" #testInput required>
     <p>{{testInput.value}}</p>
   </div>
+  <a [routerLink]="['/heroes/2']" routerLinkActive="router-link-active" >toId2</a>
   <button (click)="save($event)">save</button>
   <button (click)="back()">back</button>
 </div>

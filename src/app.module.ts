@@ -15,6 +15,7 @@ import { PopupComponent } from './components/popup/popup.component';
 import { Router } from '@angular/router';
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
+import { TodosModule } from './module/todos/todos.module';
 
 @NgModule({
   declarations: [
@@ -30,12 +31,13 @@ import { SharedModule } from './shared/shared.module';
     CoreModule,
     HttpClientModule,
     FormsModule,
+    HeroesModule,
+    TodosModule,
     AppRoutingModule,
     SharedModule,
-    HeroesModule,
     // CrisisCenterModule,
     HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryDataService, { dataEncapsulation: false }
+      InMemoryDataService, { dataEncapsulation: false, delay: 500 }
     ),
   ],
 

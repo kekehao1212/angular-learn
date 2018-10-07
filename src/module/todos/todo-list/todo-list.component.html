@@ -1,0 +1,9 @@
+<ul class="todos">
+  <li *ngFor="let todo of todos">
+    <input type="checkbox" #Input>
+    <a routerLink="/todos/{{todo.id}}">
+      {{todo.content}}
+    </a>
+  </li>
+</ul>
+
