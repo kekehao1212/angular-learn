@@ -25,7 +25,8 @@ export class TodosService {
     return this.http.get<Todo>(url);
   }
 
-  updateTodo(todo): Observable<any> {
+  updateTodo(todo: Todo): Observable<any> {
+    console.log(todo);
     return this.http.put(this.todosUrl, todo, httpOptions);
   }
 

@@ -4,6 +4,7 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Todo } from '../types/todo';
 import { switchMap } from 'rxjs/operators';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-todo',
@@ -12,6 +13,7 @@ import { switchMap } from 'rxjs/operators';
 })
 export class TodoComponent implements OnInit {
   todo$: Observable<Todo>;
+  content = new FormControl('');
   constructor(
     private todosService: TodosService,
     private route: ActivatedRoute
@@ -24,10 +26,10 @@ export class TodoComponent implements OnInit {
     );
   }
 
-  update() {
-    console.log(this.todo$);
-    this.todosService.updateTodo(this.todo$)
-      .subscribe(() => {});
+  save(todo: Todo) {
+    console.log(todo);
+    this.todosService.updateTodo(todo)
+      .subscribe((x) => console.log(x));
   }
 
 }

@@ -1,9 +1,13 @@
 
 <div *ngIf="todo$ | async as todo">
   <div><span>id:</span>{{todo.id}}</div>
-  <form (ngSubmit)="onSubmit()" #todoForm="ngForm">
     <label for="content">content:
-      <input [(ngModel)]="todo.content" placeholder="content" id="content" #content required [ngModelOptions]="{standalone: true}">
+      <input
+      [formControl]="content"
+      placeholder="content"
+      id="content"
+      required
+      >
       {{content.value}}
     </label>
     <br>
@@ -17,6 +21,6 @@
         [ngModelOptions]="{standalone: true}">
       {{priority.value}}
     </label>
-    <button (click)="save()">save</button>
-  </form>
+    <button (click)="save({id: todo.id,content: todo.content, priority: todo.priority})">save</button>
+    <button (click)="x">rest</button>
 </div>
