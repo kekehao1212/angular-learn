@@ -6,6 +6,7 @@ import { TodosRoutingModule } from './todos.routing';
 import { TodoListComponent } from './todo-list/todo-list.component';
 import { TodosService } from './services/todos.service';
 import { TodoComponent } from './todo/todo.component';
+import { ForbiddenNameDirective } from './todo/forbiddenName.directive';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { TodoComponent } from './todo/todo.component';
   ],
   declarations: [
     TodoListComponent,
-    TodoComponent
+    TodoComponent,
+    ForbiddenNameDirective
   ],
   providers: [TodosService]
 })

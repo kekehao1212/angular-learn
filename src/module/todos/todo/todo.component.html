@@ -1,26 +1,33 @@
 
-<div *ngIf="todo$ | async as todo">
+<div *ngIf="todo" [formGroup]="todoForms">
   <div><span>id:</span>{{todo.id}}</div>
     <label for="content">content:
       <input
-      [formControl]="content"
+      formControlName="content"
       placeholder="content"
       id="content"
       required
       >
-      {{content.value}}
+      {{todoForms.value.content}}
     </label>
     <br>
     <label for="priority">priority:
       <input
-        [(ngModel)]="todo.priority"
+        formControlName="priority"
         placeholder="priority"
         id="priority"
-        #priority
         required
-        [ngModelOptions]="{standalone: true}">
-      {{priority.value}}
+        >
+      {{todoForms.value.priority}}
     </label>
-    <button (click)="save({id: todo.id,content: todo.content, priority: todo.priority})">save</button>
-    <button (click)="x">rest</button>
-</div>
+    <button (click)="save()" disabled>save</button>
+    <button type="reset">rest</button>
+   {{todoForms.status}}
+  </div>
+  <h2>Template-dirven validation</h2>
+  <input name="name"
+        [(ngModel)]="templateDrivenName"
+        #name="ngModel"
+        appForbiddenName="bob"
+        required>
+  name valid:{{name.valid}}
