@@ -11,9 +11,9 @@ const todosRoutes: Routes = [
   {
     path: 'todos/:id',
     component: TodoComponent,
-    resolve: {
-      'todo': TodosResolverService
-    }
+    // resolve: {
+    //   'todo': TodosResolverService
+    // }
   }
 ];
 

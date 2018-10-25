@@ -37,7 +37,7 @@ import { TodosModule } from './module/todos/todos.module';
     SharedModule,
     // CrisisCenterModule,
     HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryDataService, { dataEncapsulation: false, delay: 500 }
+      InMemoryDataService, { dataEncapsulation: false, delay: 5000 }
     ),
   ],
 
