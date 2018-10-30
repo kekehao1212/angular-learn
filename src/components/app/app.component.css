@@ -26,3 +26,15 @@ nav a:hover {
 nav a.active {
   color: #039be5;
 }
+.message-container {
+  background: black;
+  color: white;
+  opacity: 0.7;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 400px;
+  padding: 10px;
+  max-height: 500px;
+  overflow-y: scroll;
+}

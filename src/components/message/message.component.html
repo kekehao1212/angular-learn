@@ -1,9 +1,11 @@
 <div>
-  <h2 appHighlight="black">Message{{message.h}} Undeclared members is {{$any(this).member}}</h2>
+  <h2>Message Control & Input Output Learing</h2>
+  <h3 appHighlight="black">Message from app is {{message.message}}</h3>
   <button class="clear"
           (click)="messageService.clear()">
           clear
   </button>
-  <button (click)="click($event)">hello</button>
+  <button (click)="click($event)">output & second router-outlet</button>
+  <h4>httpClient log</h4>
   <div *ngFor="let message of messageService.messages">{{message}}</div>
 </div>

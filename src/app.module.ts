@@ -16,6 +16,7 @@ import { Router } from '@angular/router';
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 import { TodosModule } from './module/todos/todos.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -30,15 +31,16 @@ import { TodosModule } from './module/todos/todos.module';
     BrowserModule,
     CoreModule,
     HttpClientModule,
+    // HttpClientInMemoryWebApiModule.forRoot(
+    //   InMemoryDataService, { dataEncapsulation: false, delay: 500 }
+    // ),
     FormsModule,
     HeroesModule,
     TodosModule,
     AppRoutingModule,
     SharedModule,
     // CrisisCenterModule,
-    HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryDataService, { dataEncapsulation: false, delay: 500 }
-    ),
+    BrowserAnimationsModule,
   ],
 
   bootstrap: [AppComponent]

@@ -9,5 +9,8 @@
   </nav>
   <router-outlet></router-outlet>
   <router-outlet name="popup"></router-outlet>
-  <app-message [message]="{h: 'hello'}" (hello)="sayHello()"></app-message>
+  <!-- output learing -->
+  <div class="message-container">
+    <app-message [message]="{message: 'hello'}" (hello)="sayHello()"></app-message>
+  </div>
 </div>

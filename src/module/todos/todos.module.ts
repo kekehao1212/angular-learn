@@ -7,6 +7,8 @@ import { TodoListComponent } from './todo-list/todo-list.component';
 import { TodosService } from './services/todos.service';
 import { TodoComponent } from './todo/todo.component';
 import { ForbiddenNameDirective } from './todo/forbiddenName.directive';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService } from 'src/core/services/in-memory-data/in-memory-data.service';
 
 
 @NgModule({
@@ -15,7 +17,8 @@ import { ForbiddenNameDirective } from './todo/forbiddenName.directive';
     FormsModule,
     SharedModule,
     TodosRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+
   ],
   declarations: [
     TodoListComponent,
