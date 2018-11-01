@@ -15,7 +15,7 @@
 
 <mat-card *ngFor="let joke of jokes$ | async">
   <div class="joke-content flex">
-    <!-- <span class="vote">{{ getVotes() }}</span> -->
+    <span class="vote">{{ getVotes() }}</span>
     <span class="stretch" [innerHTML]="joke.joke"></span>
     <button mat-icon-button>
       <mat-icon class="heart" aria-laber="like">favorite</mat-icon>

@@ -3,7 +3,7 @@ import { Observable, Subject, merge } from 'rxjs';
 import { Joke } from '../types';
 import { JokeService } from '../services/joke.service';
 import { take, mergeMap, skip, mapTo } from 'rxjs/operators';
-
+import { Memoize } from 'lodash-decorators';
 @Component({
   selector: 'app-joke-list',
   templateUrl: './joke-list.component.html',
@@ -30,9 +30,11 @@ export class JokeListComponent implements OnInit {
     this.showNotification$ = merge(show$, hide$);
   }
 
+  @Memoize()
   getVotes(id: number) {
     return Math.floor(10 + Math.random() * (100 - 10));
   }
+
   getDataOnce() {
     return this.jokeService.jokes.pipe(take(1));
   }
