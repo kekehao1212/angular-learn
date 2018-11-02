@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { TodosService } from '../services/todos.service';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Observable } from 'rxjs';
-import { Todo } from '../types/todo';
+import { Todo } from '../models/todo';
 import { switchMap } from 'rxjs/operators';
 import { FormControl, FormGroup, Validators, ValidatorFn, AbstractControl } from '@angular/forms';
 

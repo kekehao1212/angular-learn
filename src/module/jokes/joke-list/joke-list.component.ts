@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable, Subject, merge } from 'rxjs';
-import { Joke } from '../types';
+import { Joke } from '../models';
 import { JokeService } from '../services/joke.service';
 import { take, mergeMap, skip, mapTo, switchMap } from 'rxjs/operators';
 import { Memoize } from 'lodash-decorators';

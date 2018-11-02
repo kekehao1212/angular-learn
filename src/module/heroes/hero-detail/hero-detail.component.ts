@@ -1,5 +1,5 @@
 import { Component, OnInit , Input, OnDestroy} from '@angular/core';
-import { Hero } from '../types/hero';
+import { Hero } from '../models/hero';
 import { ActivatedRoute, Router, ParamMap } from '@angular/router';
 import { HeroService } from '../services/hero.service';
 import { Location } from '@angular/common';

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Resolve, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router';
-import { Todo } from '../types/todo';
+import { Todo } from '../models/todo';
 import { Observable, of, EMPTY } from 'rxjs';
 import { TodosService } from './todos.service';
 import { take, mergeMap } from 'rxjs/operators';

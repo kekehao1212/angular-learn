@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { MessageService } from '../../../core/services/message/message.service';
 import { Observable } from 'rxjs';
-import { Todo } from '../types/todo';
+import { Todo } from '../models/todo';
 import { find, filter, groupBy } from 'rxjs/operators';
 
 const httpOptions = {

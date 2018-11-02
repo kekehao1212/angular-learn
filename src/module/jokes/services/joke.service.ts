@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { JokeResponse, Joke } from '../types/index';
+import { JokeResponse, Joke } from '../models';
 import { map, shareReplay, switchMap, takeUntil } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { Observable, timer, Subject } from 'rxjs';

@@ -1,6 +1,6 @@
 import { Component, OnInit, Host, Optional, Self, SkipSelf } from '@angular/core';
 import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
-import { Hero } from '../types/hero';
+import { Hero } from '../models/hero';
 import { Subject, Observable } from 'rxjs';
 import { HeroService } from '../services/hero.service';
 

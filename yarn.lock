@@ -189,7 +189,7 @@
   version "7.0.0-beta.51"
   resolved "https://registry.yarnpkg.com/@babel/generator/-/generator-7.0.0-beta.51.tgz#6c7575ffde761d07485e04baedc0392c6d9e30f6"
   dependencies:
-    "@babel/types" "7.0.0-beta.51"
+    "@babel/modelss" "7.0.0-beta.51"
     jsesc "^2.5.1"
     lodash "^4.17.5"
     source-map "^0.5.0"
@@ -201,19 +201,19 @@
   dependencies:
     "@babel/helper-get-function-arity" "7.0.0-beta.51"
     "@babel/template" "7.0.0-beta.51"
-    "@babel/types" "7.0.0-beta.51"
+    "@babel/modelss" "7.0.0-beta.51"
 
 "@babel/helper-get-function-arity@7.0.0-beta.51":
   version "7.0.0-beta.51"
   resolved "https://registry.yarnpkg.com/@babel/helper-get-function-arity/-/helper-get-function-arity-7.0.0-beta.51.tgz#3281b2d045af95c172ce91b20825d85ea4676411"
   dependencies:
-    "@babel/types" "7.0.0-beta.51"
+    "@babel/modelss" "7.0.0-beta.51"
 
 "@babel/helper-split-export-declaration@7.0.0-beta.51":
   version "7.0.0-beta.51"
   resolved "https://registry.yarnpkg.com/@babel/helper-split-export-declaration/-/helper-split-export-declaration-7.0.0-beta.51.tgz#8a6c3f66c4d265352fc077484f9f6e80a51ab978"
   dependencies:
-    "@babel/types" "7.0.0-beta.51"
+    "@babel/modelss" "7.0.0-beta.51"
 
 "@babel/highlight@7.0.0-beta.51":
   version "7.0.0-beta.51"
@@ -233,7 +233,7 @@
   dependencies:
     "@babel/code-frame" "7.0.0-beta.51"
     "@babel/parser" "7.0.0-beta.51"
-    "@babel/types" "7.0.0-beta.51"
+    "@babel/modelss" "7.0.0-beta.51"
     lodash "^4.17.5"
 
 "@babel/traverse@7.0.0-beta.51":
@@ -245,15 +245,15 @@
     "@babel/helper-function-name" "7.0.0-beta.51"
     "@babel/helper-split-export-declaration" "7.0.0-beta.51"
     "@babel/parser" "7.0.0-beta.51"
-    "@babel/types" "7.0.0-beta.51"
+    "@babel/modelss" "7.0.0-beta.51"
     debug "^3.1.0"
     globals "^11.1.0"
     invariant "^2.2.0"
     lodash "^4.17.5"
 
-"@babel/types@7.0.0-beta.51":
+"@babel/modelss@7.0.0-beta.51":
   version "7.0.0-beta.51"
-  resolved "https://registry.yarnpkg.com/@babel/types/-/types-7.0.0-beta.51.tgz#d802b7b543b5836c778aa691797abf00f3d97ea9"
+  resolved "https://registry.yarnpkg.com/@babel/modelss/-/modelss-7.0.0-beta.51.tgz#d802b7b543b5836c778aa691797abf00f3d97ea9"
   dependencies:
     esutils "^2.0.2"
     lodash "^4.17.5"
@@ -3265,7 +3265,7 @@ istanbul-lib-instrument@^2.1.0:
     "@babel/parser" "7.0.0-beta.51"
     "@babel/template" "7.0.0-beta.51"
     "@babel/traverse" "7.0.0-beta.51"
-    "@babel/types" "7.0.0-beta.51"
+    "@babel/modelss" "7.0.0-beta.51"
     istanbul-lib-coverage "^2.0.1"
     semver "^5.5.0"
 
@@ -5916,28 +5916,28 @@ tweetnacl@^0.14.3, tweetnacl@~0.14.0:
 
 type-check@~0.3.2:
   version "0.3.2"
-  resolved "https://registry.yarnpkg.com/type-check/-/type-check-0.3.2.tgz#5884cab512cf1d355e3fb784f30804b2b520db72"
+  resolved "https://registry.yarnpkg.com/models-check/-/models-check-0.3.2.tgz#5884cab512cf1d355e3fb784f30804b2b520db72"
   dependencies:
     prelude-ls "~1.1.2"
 
 type-is@~1.6.15, type-is@~1.6.16:
   version "1.6.16"
-  resolved "https://registry.yarnpkg.com/type-is/-/type-is-1.6.16.tgz#f89ce341541c672b25ee7ae3c73dee3b2be50194"
+  resolved "https://registry.yarnpkg.com/models-is/-/models-is-1.6.16.tgz#f89ce341541c672b25ee7ae3c73dee3b2be50194"
   dependencies:
     media-typer "0.3.0"
     mime-types "~2.1.18"
 
 typedarray@^0.0.6:
   version "0.0.6"
-  resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
+  resolved "https://registry.yarnpkg.com/modelsdarray/-/modelsdarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
 
 "typescript@>=2.6.2 <2.10", typescript@~2.9.1:
   version "2.9.2"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.9.2.tgz#1cbf61d05d6b96269244eb6a3bce4bd914e0f00c"
+  resolved "https://registry.yarnpkg.com/modelsscript/-/modelsscript-2.9.2.tgz#1cbf61d05d6b96269244eb6a3bce4bd914e0f00c"
 
 typescript@~2.7.2:
   version "2.7.2"
-  resolved "http://registry.npmjs.org/typescript/-/typescript-2.7.2.tgz#2d615a1ef4aee4f574425cdff7026edf81919836"
+  resolved "http://registry.npmjs.org/modelsscript/-/modelsscript-2.7.2.tgz#2d615a1ef4aee4f574425cdff7026edf81919836"
 
 uglify-es@^3.3.4:
   version "3.3.9"
