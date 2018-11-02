@@ -28,6 +28,6 @@ export class MessageComponent implements OnInit {
 
   ngOnInit() {
     console.log(this.messageService);
-    console.log(this.message, 'sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss');
+    console.log(this.message, 'sssss');
   }
 }

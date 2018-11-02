@@ -7,6 +7,7 @@ import { PreloadStrategy } from './services/preload-stagery/preload-stagery.serv
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full'},
   { path : 'crisis-center', loadChildren: '../module/crisis-center/crisis-center.module#CrisisCenterModule', data: { preload : true } },
+  { path : 'jokes', loadChildren: '../module/jokes/jokes.module#JokesModule', data: {preload: true}},
   { path: 'countDown', component: CountDownParentComponent},
   { path: 'popup', component: PopupComponent, outlet: 'popup'},
   { path : '**', component: PageNotFoundComponent}
