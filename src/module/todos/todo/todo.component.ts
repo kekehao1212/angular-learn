@@ -27,15 +27,13 @@ export class TodoComponent implements OnInit {
     }
 
   ngOnInit() {
-    this.todo$ = this.route.paramMap.pipe(
-      switchMap((params: ParamMap) =>
-        this.todosService.getTodo(+params.get('id')))
-    );
+    // this.todo$ = this.route.paramMap.pipe(
+    //   switchMap((params: ParamMap) =>
+    //     this.todosService.getTodo(+params.get('id')))
+    // );
     this.todo$.subscribe(x => {
       this.todo = x;
       this.todoForms.patchValue({
-        content: x.content,
-        priority: x.priority
       });
       console.log(this.todoForms);
     });
