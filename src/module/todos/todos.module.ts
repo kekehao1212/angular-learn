@@ -7,8 +7,10 @@ import { TodoListComponent } from './todo-list/todo-list.component';
 import { TodosService } from './services/todos.service';
 import { TodoComponent } from './todo/todo.component';
 import { ForbiddenNameDirective } from './todo/forbiddenName.directive';
-import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService } from 'src/core/services/in-memory-data/in-memory-data.service';
+import { LoginComponent } from './login/login.component';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptorService } from './services/auth-interceptor.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -18,13 +20,19 @@ import { InMemoryDataService } from 'src/core/services/in-memory-data/in-memory-
     SharedModule,
     TodosRoutingModule,
     ReactiveFormsModule,
-
+    BrowserAnimationsModule
   ],
   declarations: [
     TodoListComponent,
     TodoComponent,
-    ForbiddenNameDirective
+    ForbiddenNameDirective,
+    LoginComponent
   ],
-  providers: [TodosService]
+  providers: [
+    TodosService, {
+    provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptorService,
+    multi: true
+  }]
 })
 export class TodosModule { }

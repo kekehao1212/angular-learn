@@ -1,0 +1,28 @@
+<main>
+  <div class="greeting">
+    <h1>Welcome back!</h1>
+    <h3>Log in to your account to get started</h3>
+  </div>
+  <form class="login-form" [formGroup]="loginForm" (ngSubmit)="login()">
+    <div class="input-container">
+      <label for="username">Username</label>
+      <input type="text" id="username" formControlName="username" data-cy="username">
+      <p class="field-error" *ngIf="!loginForm.get('username').pristine && loginForm.get('username').hasError('required')">
+        Please enter your username
+      </p>
+    </div>
+    <div class="input-container">
+      <label for="password">Password</label>
+      <input type="password" data-cy="password" id="password" formControlName="password">
+      <p class="field-error" *ngIf="!loginForm.get('username').pristine && loginForm.get('password').hasError('required')">
+        Please enter your password
+      </p>
+    </div>
+    <p class="form-error" data-cy="form-error" *ngIf="loginError">
+      {{ loginError }}
+    </p>
+    <button class="login-button" data-cy="login-button" [disabled]="!loginForm.valid">
+      Login
+    </button>
+  </form>
+</main>

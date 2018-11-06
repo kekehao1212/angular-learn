@@ -1,9 +1,84 @@
-<ul class="todos">
-  <li *ngFor="let todo of todos">
-    <input type="checkbox" #Input>
-    <a routerLink="/todos/{{todo.id}}">
-      {{todo.content}}
-    </a>
-  </li>
-</ul>
+<section class="todoapp">
+  <header class="header">
+    <h1>todos</h1>
+    <input
+      type="text"
+      class="new-todo"
+      data-cy="new-todo"
+      placeholder="What needs to be done?"
+      [(ngModel)]="newTodo" (keyup.enter)="addTodo(todo.value)"
+      #todo
+      autofocus
+    >
+  </header>
+  <section data-cy="main" class="main" *ngIf="todos.length > 0">
+    <input
+      type="checkbox"
+      class="toggle-all"
+      id="toggle-all"
+      (click)="toggleAll(inputToggleAll.checked)"
+      [checked]="allCompleted"
+      #inputToggleAll
+    >
+    <label for="toggle-all">Mark all as complete</label>
+    <ul class="todo-list" [@staggerTodos]="filteredTOdos?.length">
+      <li
+        *ngFor="let todo of filteredTodos; trackBy: trackById"
+        data-cy="todo-item"
+        [ngClass]="{'completed:': todo.completed, 'editing': todo === currentTodo}"
+      >
+      <div class="view">
+        <input
+          type="checkbox"
+          class="toggle"
+          data-cy="toggle"
+          (change)="toggle(todo)"
+          [checked]="todo.completed"
+        >
+        <label *ngIf="currentTodo?.id != todo.id" (dblclick)="edit(todo)">{{todo.title}}</label>
+        <button class="destroy" data-cy="destroy" (click)="delete(todo)"></button>
+      </div>
+      <input
+        type="text"
+        class="edit"
+        *ngIf="currentTodo == todo"
+        data-cy="edit-todo"
+        [(ngModel)]="currentTodo.title"
+        (keyup.enter)="update(todo)"
+        (keyup.esc)="cancelEdit()"
+        autofocus
+      >
+      </li>
+    </ul>
+  </section>
+  <footer *ngIf="todos.length > 0" data-cy="footer" class="footer">
+    <span class="todo-count" data-cy="todo-count">
+      <strong>{{remaining}}</strong> item{{remaining !== 1 ? 's' : ''}} left
+    </span>
+    <ul class="filters">
+      <li>
+        <a routerLink="/todos" [ngClass]="{'selected': todoFilter === 'SHOW_ALL'}">ALL</a>
+      </li>
+      <li>
+        <a routerLink="/todos/active" [ngClass]="{'selected': todoFilter === 'SHOW_ACTIVE'}">ACTIVE</a>
+      </li>
+      <li>
+        <a routerLink="/todos/completed" [ngClass]="{'selected': todoFilter === 'SHOW_COMPLETED'}">COMPLETED</a>
+      </li>
+    </ul>
+    <button *ngIf="todos.length > 0" class="clear-completed" (click)="clearCompleted()">CLEAR ALL</button>
+  </footer>
+</section>
 
+<footer class="info">
+  <p>Double-click to edit a todo</p>
+  <p>
+    Fork from
+    <a href="https://twitter.com/elmd_">Dominic Elm</a>
+  </p>
+  <p>
+    Based on
+    <a href="http://todomvc.com">TodoMVC</a>
+  </p>
+  <button class="logout-button" data-cy="logout" (click)="logout()">LOGOUT</button>
+</footer>
