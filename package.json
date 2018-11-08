@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve -o --hmr --hmr-warning",
-    "server": "ts-node server/index.ts",
+    "server": "ts-node --skip-project server/index.ts",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
