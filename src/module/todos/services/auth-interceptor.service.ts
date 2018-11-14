@@ -4,6 +4,7 @@ import { AuthService } from './auth.service';
 import { Router } from '@angular/router';
 import { catchError } from 'rxjs/operators';
 import { throwError } from 'rxjs';
+import { environment } from '../../../environments/environment';
 
 @Injectable()
 export class AuthInterceptorService implements HttpInterceptor {
@@ -14,17 +15,21 @@ export class AuthInterceptorService implements HttpInterceptor {
   ) { }
 
   intercept(req: HttpRequest<any>, next: HttpHandler) {
-    req = req.clone({
-      setHeaders: {
-        Authorization: `Bearer ${this.authService.getToken()}`
-      }
-    });
+    console.log(req);
+    if (req.url.includes(environment.apiEndpoint)) {
+      req = req.clone({
+        setHeaders: {
+          Authorization: `Bearer ${this.authService.getToken()}`
+        }
+      });
+      return next.handle(req).pipe(
+        catchError(error => {
+          this.router.navigate(['/login']);
+          return throwError(error);
+        })
+      );
+    }
 
-    return next.handle(req).pipe(
-      catchError(error => {
-        this.router.navigate(['/login']);
-        return throwError(error);
-      })
-    );
+    return next.handle(req);
   }
 }

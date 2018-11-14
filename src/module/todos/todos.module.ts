@@ -29,10 +29,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     LoginComponent
   ],
   providers: [
-    TodosService, {
+    TodosService,
+    {
     provide: HTTP_INTERCEPTORS,
     useClass: AuthInterceptorService,
     multi: true
-  }]
+  }
+]
 })
 export class TodosModule { }
