@@ -5,7 +5,7 @@ import { PageNotFoundComponent } from '../components/PageNotFound/PageNotFound.c
 import { PopupComponent } from '../components/popup/popup.component';
 import { PreloadStrategy } from './services/preload-stagery/preload-stagery.service';
 const routes: Routes = [
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full'},
+  { path: '', redirectTo: '/todos', pathMatch: 'full'},
   { path : 'crisis-center', loadChildren: '../module/crisis-center/crisis-center.module#CrisisCenterModule', data: { preload : true } },
   { path : 'jokes', loadChildren: '../module/jokes/jokes.module#JokesModule', data: {preload: true}},
   { path: 'countDown', component: CountDownParentComponent},

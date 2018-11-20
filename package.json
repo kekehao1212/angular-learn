@@ -6,7 +6,6 @@
     "start": "ng serve -o --hmr --hmr-warning",
     "server": "ts-node --skip-project server/index.ts",
     "build": "ng build",
-    "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
