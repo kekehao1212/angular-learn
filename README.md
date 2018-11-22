@@ -9,3 +9,6 @@
 
 
 ## [Todos module refer link](https://github.com/d3lm/todomvc)
+
+
+## [Todos module Searchable Templates refer link](https://netbasal.com/creating-searchable-templates-in-angular-20ba70ce4e21)

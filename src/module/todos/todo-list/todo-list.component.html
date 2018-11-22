@@ -21,35 +21,41 @@
       #inputToggleAll
     >
     <label for="toggle-all">Mark all as complete</label>
-    <ul class="todo-list" [@staggerTodos]="filteredTOdos?.length">
-      <li
-        *ngFor="let todo of filteredTodos; trackBy: trackById"
-        data-cy="todo-item"
-        [ngClass]="{'completed:': todo.completed, 'editing': todo === currentTodo}"
-      >
-      <div class="view">
-        <input
-          type="checkbox"
-          class="toggle"
-          data-cy="toggle"
-          (change)="toggle(todo)"
-          [checked]="todo.completed"
+    <input placeholder="Search Tods..." [formControl]="searchControl">
+    <app-searchable-container
+      [searchTerm]="searchControl.value"
+      #container="searchableContainer">
+      <ul class="todo-list" [@staggerTodos]="filteredTOdos?.length">
+        <li
+          *ngFor="let todo of filteredTodos; trackBy: trackById"
+          data-cy="todo-item"
+          [ngClass]="{'completed:': todo.completed, 'editing': todo === currentTodo}"
+          [appSearchable]="todos.title"
         >
-        <label *ngIf="currentTodo?.id != todo.id" (dblclick)="edit(todo)">{{todo.title}}</label>
-        <button class="destroy" data-cy="destroy" (click)="delete(todo)"></button>
-      </div>
-      <input
-        type="text"
-        class="edit"
-        *ngIf="currentTodo == todo"
-        data-cy="edit-todo"
-        [(ngModel)]="currentTodo.title"
-        (keyup.enter)="update(todo)"
-        (keyup.esc)="cancelEdit()"
-        autofocus
-      >
-      </li>
-    </ul>
+        <div class="view">
+          <input
+            type="checkbox"
+            class="toggle"
+            data-cy="toggle"
+            (change)="toggle(todo)"
+            [checked]="todo.completed"
+          >
+          <label *ngIf="currentTodo?.id != todo.id" (dblclick)="edit(todo)">{{todo.title}}</label>
+          <button class="destroy" data-cy="destroy" (click)="delete(todo)"></button>
+        </div>
+        <input
+          type="text"
+          class="edit"
+          *ngIf="currentTodo == todo"
+          data-cy="edit-todo"
+          [(ngModel)]="currentTodo.title"
+          (keyup.enter)="update(todo)"
+          (keyup.esc)="cancelEdit()"
+          autofocus
+        >
+        </li>
+      </ul>
+    </app-searchable-container>
   </section>
   <footer *ngIf="todos.length > 0" data-cy="footer" class="footer">
     <span class="todo-count" data-cy="todo-count">

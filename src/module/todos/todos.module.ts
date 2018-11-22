@@ -11,6 +11,8 @@ import { LoginComponent } from './login/login.component';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptorService } from './services/auth-interceptor.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SearchableDirective } from './directives/searchable.directive';
+import { SearchableContainerComponent } from './searchable-container/searchable-container.component';
 
 
 @NgModule({
@@ -26,7 +28,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     TodoListComponent,
     TodoComponent,
     ForbiddenNameDirective,
-    LoginComponent
+    LoginComponent,
+    SearchableDirective,
+    SearchableContainerComponent,
   ],
   providers: [
     TodosService,

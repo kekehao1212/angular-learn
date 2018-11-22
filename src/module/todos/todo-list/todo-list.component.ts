@@ -5,6 +5,7 @@ import { AuthService } from '../services/auth.service';
 import { switchMapTo, tap } from 'rxjs/operators';
 import { ActivatedRoute } from '@angular/router';
 import { staggerTodos } from './todo-list.animations';
+import { FormControl } from '@angular/forms';
 
 enum Filter {
   ALL = 'SHOW_ALL',
@@ -18,6 +19,7 @@ enum Filter {
   animations: [staggerTodos]
 })
 export class TodoListComponent implements OnInit {
+  searchControl = new FormControl('');
   newTodo = '';
   currentTodo: Todo;
   todos: Array<Todo> = [];

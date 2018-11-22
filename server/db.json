@@ -3,10 +3,8 @@
   "users": [
     {
       "id": 0,
-      "username": "ppan",
-      "firstname": "Peter",
-      "lastname": "Pan",
-      "password": "ppan"
+      "username": "test",
+      "password": "123"
     }
   ]
 }
