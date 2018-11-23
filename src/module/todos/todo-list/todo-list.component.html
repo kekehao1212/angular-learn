@@ -21,7 +21,7 @@
       #inputToggleAll
     >
     <label for="toggle-all">Mark all as complete</label>
-    <input placeholder="Search Tods..." [formControl]="searchControl">
+    <input placeholder="Search Tods..." [formControl]="searchControl" class="new-todo">
     <app-searchable-container
       [searchTerm]="searchControl.value"
       #container="searchableContainer">
@@ -30,17 +30,17 @@
           *ngFor="let todo of filteredTodos; trackBy: trackById"
           data-cy="todo-item"
           [ngClass]="{'completed:': todo.completed, 'editing': todo === currentTodo}"
-          [appSearchable]="todos.title"
-        >
-        <div class="view">
-          <input
+          [appSearchable]="todo.title"
+          >
+          <div class="view">
+            <input
             type="checkbox"
             class="toggle"
             data-cy="toggle"
             (change)="toggle(todo)"
             [checked]="todo.completed"
-          >
-          <label *ngIf="currentTodo?.id != todo.id" (dblclick)="edit(todo)">{{todo.title}}</label>
+            >
+            <label appSearchableHighlight *ngIf="currentTodo?.id != todo.id" (dblclick)="edit(todo)" >{{todo.title}}</label>
           <button class="destroy" data-cy="destroy" (click)="delete(todo)"></button>
         </div>
         <input

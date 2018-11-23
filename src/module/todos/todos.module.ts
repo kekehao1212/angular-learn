@@ -13,6 +13,7 @@ import { AuthInterceptorService } from './services/auth-interceptor.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SearchableDirective } from './directives/searchable.directive';
 import { SearchableContainerComponent } from './searchable-container/searchable-container.component';
+import { SearchableHighlightDirective } from './directives/searchable-highlight.directive';
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import { SearchableContainerComponent } from './searchable-container/searchable-
     LoginComponent,
     SearchableDirective,
     SearchableContainerComponent,
+    SearchableHighlightDirective
   ],
   providers: [
     TodosService,

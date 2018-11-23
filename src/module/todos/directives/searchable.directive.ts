@@ -2,14 +2,13 @@ import { Directive, Input, Optional, ElementRef, OnInit, OnDestroy } from '@angu
 import { SearchableContainerComponent } from '../searchable-container/searchable-container.component';
 
 @Directive({
-  selector: '[appSearchable]'
+  selector: '[appSearchable]',
 })
 export class SearchableDirective implements OnInit, OnDestroy {
   token = '';
 
-  @Input('appSearchable')
-  set searchable(value: string) {
-    console.log(value);
+  @Input()
+  set appSearchable(value: string) {
     this.token = value;
   }
 
@@ -17,17 +16,17 @@ export class SearchableDirective implements OnInit, OnDestroy {
     if (!container) {
       throw new Error('Missing <searchable-container> warpper component');
     }
-   }
-   ngOnInit() {
+  }
+  ngOnInit() {
     this.container.register(this);
-   }
-   hide() {
-     this.el.nativeElement.classList.add('hide');
-   }
-   show() {
-     this.el.nativeElement.classList.remove('hide');
-   }
-   ngOnDestroy() {
-     this.container.unregister(this);
-   }
+  }
+  hide() {
+    this.el.nativeElement.classList.add('hide');
+  }
+  show() {
+    this.el.nativeElement.classList.remove('hide');
+  }
+  ngOnDestroy() {
+    this.container.unregister(this);
+  }
 }
