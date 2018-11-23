@@ -1,6 +1,6 @@
 # AngularLearn
 
-## [jokes module refer link](https://blog.thoughtram.io/angular/2018/03/05/advanced-caching-with-rxjs.html#fetching-new-data-on-demand) 
+## [jokes module refer link](https://blog.thoughtram.io/angular/2018/03/05/advanced-caching-with-rxjs.html) 
 
 ## The marble diagram
 <div style="text-align: center">
