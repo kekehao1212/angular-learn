@@ -15,7 +15,6 @@ export class AuthInterceptorService implements HttpInterceptor {
   ) { }
 
   intercept(req: HttpRequest<any>, next: HttpHandler) {
-    console.log(req);
     if (req.url.includes(environment.apiEndpoint)) {
       req = req.clone({
         setHeaders: {
